@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Wordle Game duplicate</title>
+  </head>
+  <body>
+    <header>
+      <div class="titleContainer">
+        <span class="letterBlock green">W</span>
+        <span class="letterBlock green">O</span>
+        <span class="letterBlock green">R</span>
+        <span class="letterBlock green">D</span>
+        <span class="letterBlock green">L</span>
+        <span class="letterBlock green">E</span>
+        <span class="letterBlock yellow">G</span>
+        <span class="letterBlock yellow">A</span>
+        <span class="letterBlock yellow">M</span>
+        <span class="letterBlock yellow">E</span>
+      </div>
+    </header>
+    <main>
+      <div class="wordleContainer">
+        <div class="toolBox">
+          <button class="language">EN</button>
+          <button class="settings">Settings</button>
+          <button class="information">i</button>
+        </div>
+        <div class="wordGrid">
+          <div class="wordRow" id="row1">
+            <span class="letterCell letter1"></span>
+            <span class="letterCell letter2"></span>
+            <span class="letterCell letter3"></span>
+            <span class="letterCell letter4"></span>
+            <span class="letterCell letter5"></span>
+          </div>
+          <div class="wordRow" id="row2">
+            <span class="letterCell letter1"></span>
+            <span class="letterCell letter2"></span>
+            <span class="letterCell letter3"></span>
+            <span class="letterCell letter4"></span>
+            <span class="letterCell letter5"></span>
+          </div>
+          <div class="wordRow" id="row3">
+            <span class="letterCell letter1"></span>
+            <span class="letterCell letter2"></span>
+            <span class="letterCell letter3"></span>
+            <span class="letterCell letter4"></span>
+            <span class="letterCell letter5"></span>
+          </div>
+          <div class="wordRow" id="row4">
+            <span class="letterCell letter1"></span>
+            <span class="letterCell letter2"></span>
+            <span class="letterCell letter3"></span>
+            <span class="letterCell letter4"></span>
+            <span class="letterCell letter5"></span>
+          </div>
+          <div class="wordRow" id="row5">
+            <span class="letterCell letter1"></span>
+            <span class="letterCell letter2"></span>
+            <span class="letterCell letter3"></span>
+            <span class="letterCell letter4"></span>
+            <span class="letterCell letter5"></span>
+          </div>
+          <div class="wordRow" id="row6">
+            <span class="letterCell letter1"></span>
+            <span class="letterCell letter2"></span>
+            <span class="letterCell letter3"></span>
+            <span class="letterCell letter4"></span>
+            <span class="letterCell letter5"></span>
+          </div>
+        </div>
+        <div class="keyboard">
+          <div class="keyRow">
+            <button class="btnKey" id="q">q</button>
+            <button class="btnKey" id="w">w</button>
+            <button class="btnKey" id="e">e</button>
+            <button class="btnKey" id="r">r</button>
+            <button class="btnKey" id="t">t</button>
+            <button class="btnKey" id="y">y</button>
+            <button class="btnKey" id="u">u</button>
+            <button class="btnKey" id="i">i</button>
+            <button class="btnKey" id="o">o</button>
+            <button class="btnKey" id="p">p</button>
+            <button class="btnKey" id="delete">Delete</button>
+          </div>
+          <div class="keyRow">
+            <button class="btnKey" id="a">a</button>
+            <button class="btnKey" id="s">s</button>
+            <button class="btnKey" id="d">d</button>
+            <button class="btnKey" id="f">f</button>
+            <button class="btnKey" id="g">g</button>
+            <button class="btnKey" id="h">h</button>
+            <button class="btnKey" id="j">j</button>
+            <button class="btnKey" id="k">k</button>
+            <button class="btnKey" id="l">l</button>
+          </div>
+          <div class="keyRow">
+            <button class="btnKey" id="z">z</button>
+            <button class="btnKey" id="x">x</button>
+            <button class="btnKey" id="c">c</button>
+            <button class="btnKey" id="v">v</button>
+            <button class="btnKey" id="b">b</button>
+            <button class="btnKey" id="n">n</button>
+            <button class="btnKey" id="m">m</button>
+            <button class="btnKey" id="enter">Enter</button>
+          </div>
+        </div>
+      </div>
+      <div class="messageBox">
+        <div class="innerMessage" id="startGame">
+          <button class="exit" id="exitStart">X</button>
+          <h2 class="message">Begin Guessing the 5-letter word</h2>
+        </div>
+        <div class="innerMessage hidden" id="wordNotFinished">
+          <button class="exit" id="exitGuess">X</button>
+          <h2 class="message">Incomplete Guess</h2>
+        </div>
+        <div class="innerMessage hidden" id="gameOver">
+          <button class="exit" id="exitGameOver">X</button>
+          <h2 class="message" id="gameResult"></h2>
+          <p id="lossMessage"></p>
+          <button class="restart" id="newGame">New Game</button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
