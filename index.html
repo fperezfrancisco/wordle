@@ -25,9 +25,9 @@
     <main>
       <div class="wordleContainer">
         <div class="toolBox">
-          <button class="language">EN</button>
+          <button class="stats" id="statsBtn">Stats</button>
           <button class="settings">Settings</button>
-          <button class="information">i</button>
+          <button class="giveUp" id="giveUpBtn">Give Up</button>
         </div>
         <div class="wordGrid">
           <div class="wordRow" id="row1">
@@ -108,9 +108,13 @@
             <button class="btnKey" id="m">m</button>
             <button class="btnKey" id="enter">Enter</button>
           </div>
+          <div class="mobileButtons">
+            <button class="btnKey" id="enterMobile">Enter</button>
+            <button class="btnKey" id="deleteMobile">Delete</button>
+          </div>
         </div>
       </div>
-      <div class="messageBox">
+      <dialog class="messageBox">
         <div class="innerMessage" id="startGame">
           <button class="exit" id="exitStart">X</button>
           <h2 class="message">Begin Guessing the 5-letter word</h2>
@@ -125,7 +129,34 @@
           <p id="lossMessage"></p>
           <button class="restart" id="newGame">New Game</button>
         </div>
-      </div>
+        <div class="innerMessage hidden" id="statsBox">
+          <button class="exit" id="exitStats">X</button>
+          <h2 class="message" id="statsHeading">Your Stats</h2>
+          <button class="wordleBtn" id="resetBtn">Reset Stats</button>
+          <div class="statsContainer grid">
+            <span class="statsInnerBox" id="gamesPlayed">
+              <p id="numGamesPlayed"></p>
+              <h3 class="boxHeading">Games Played</h3>
+            </span>
+            <span class="statsInnerBox" id="gamesWon">
+              <p id="numGamesWon"></p>
+              <h3 class="boxHeading">Games Won</h3>
+            </span>
+            <span class="statsInnerBox" id="percentWon">
+              <p id="percentWonNumber"></p>
+              <h3 class="boxHeading">% Games Won</h3>
+            </span>
+            <span class="statsInnerBox" id="currStreak">
+              <p id="currStreakNumber"></p>
+              <h3 class="boxHeading">Current Streak</h3>
+            </span>
+            <span class="statsInnerBox" id="largestStreak">
+              <p id="largestStreakNumber"></p>
+              <h3 class="boxHeading">Longest Streak</h3>
+            </span>
+          </div>
+        </div>
+      </dialog>
     </main>
     <script src="script.js"></script>
   </body>

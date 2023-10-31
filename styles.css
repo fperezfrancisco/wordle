@@ -24,7 +24,6 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -85,6 +84,7 @@ body {
   font-size: 1rem;
   background-color: var(--white);
   color: var(--darkGray);
+  min-width: 250px;
 }
 
 header {
@@ -93,7 +93,6 @@ header {
   padding: 10px 5%;
   background-color: var(--black);
   color: var(--white);
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -132,16 +131,15 @@ header {
 }
 
 main {
-  padding: 5% 0%;
-  padding-top: 120px;
+  padding: 1rem;
   text-align: center;
 }
 
 button {
-  padding: 5px;
-  margin: 5px;
-  min-width: 25px;
-  min-height: 25px;
+  padding: 2.5px;
+  margin: 2.5px;
+  min-width: 20px;
+  min-height: 20px;
   font-size: 1rem;
   font-variant-caps: all-small-caps;
   background-color: var(--gray);
@@ -163,11 +161,10 @@ button:hover {
   min-width: 125px;
   max-width: 700px;
   margin: auto;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2.5px solid var(--black);
+  /*border: 2.5px solid var(--black);*/
   padding: 5px 20px;
 }
 
@@ -181,9 +178,14 @@ button:hover {
   justify-content: flex-end;
 }
 
+.toolBox button {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
 .wordGrid {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -198,8 +200,8 @@ button:hover {
 }
 
 .letterCell {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   margin: 0px 5px;
   padding: 5px;
   border: 1px solid var(--darkGrayOpacity);
@@ -259,9 +261,9 @@ button:hover {
 /*Keyboard styling*/
 
 .keyboard {
-  margin: 20px 5px;
+  margin: 10px 5px;
   width: 100%;
-  min-width: 250px;
+  min-width: 175px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -277,10 +279,10 @@ button:hover {
 
 .btnKey {
   width: 35px;
-  height: 30px;
-  font-size: 1rem;
+  height: 35px;
+  font-size: 0.85rem;
   font-variant-caps: all-small-caps;
-  padding: 5px;
+  padding: 2.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,52 +291,77 @@ button:hover {
 }
 
 #enter {
+  display: none;
   width: 100%;
   max-width: fit-content;
   padding: 5px 10px;
 }
 
 #delete {
+  display: none;
   width: 100%;
   max-width: fit-content;
   padding: 5px 10px;
 }
 
+.mobileButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.mobileButtons > button {
+  width: 60px;
+  height: 40px;
+}
+
 /*Message box styling*/
 
 .messageBox {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   margin: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(92, 103, 114, 0.3);
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 3;
 }
 
 .innerMessage {
+  position: relative;
   width: 250px;
   height: auto;
   min-height: 250px;
   max-height: 500px;
-  top: 0%;
+  top: 0;
   left: 0;
   right: 0;
   margin: auto;
-  margin-top: 25%;
+  /*margin-top: 25%;*/
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   text-align: center;
+  row-gap: 1rem;
   background-color: var(--offwhite);
   color: var(--black);
-  box-shadow: -4px 4px 4px var(--darkestGray);
+  box-shadow: -4px 4px 25px var(--darkestGray);
 }
 
 .exit {
+  position: absolute;
   justify-self: unset;
   justify-self: flex-end;
   display: flex;
@@ -343,9 +370,31 @@ button:hover {
   width: 25px;
   height: 25px;
   padding: 2.5px;
-  margin: 0;
+  top: 16px;
+  right: 16px;
   background-color: inherit;
   color: inherit;
+}
+
+.statsContainer {
+  margin: 1rem 0rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+  align-items: center;
+  justify-items: center;
+}
+
+.statsInnerBox {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1.25rem;
+}
+
+.grid {
+  display: grid;
 }
 
 .message {
@@ -381,13 +430,14 @@ button:hover {
 
   .wordleContainer {
     width: 100%;
+    height: 100%;
     min-width: 200px;
     max-width: 700px;
   }
 
   .letterCell {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     font-size: 1.75rem;
     padding: 10px;
   }
@@ -408,5 +458,17 @@ button:hover {
     width: 100%;
     margin: auto 0;
     /*margin-bottom: 10px;*/
+  }
+
+  .mobileButtons {
+    display: none;
+  }
+
+  #enter {
+    display: block;
+  }
+
+  #delete {
+    display: block;
   }
 }
