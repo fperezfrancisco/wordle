@@ -1,6 +1,6 @@
 # WORDLE GAME REPLICA
 
-Check out this fully-functional replica of the famous Wordle Game [Wordle Web App Game](https://wordlegame.org/).
+A personal project based on the famous Wordle Web App Game [Wordle Web App Game](https://wordlegame.org/).
 
 ![](imgs/wordle-game-cover.png)
 
@@ -8,15 +8,11 @@ Check out this fully-functional replica of the famous Wordle Game [Wordle Web Ap
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -26,24 +22,14 @@ Check out this fully-functional replica of the famous Wordle Game [Wordle Web Ap
 
 Users should be able to:
 
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+- Guess a 5-letter word using the onscreen keyboard or physical keyboard
+- See whether their guess was correct or incorrect
+- See which letters are correct and in the right place, which are correct but placed wrong, and which do not belong all together
+- See whether after 6 guesses they won or lost
+- Track and see their game stats
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -55,61 +41,46 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vanilla JavaScript
+- REST API
+- Client Side Storage
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project is special because it was one of the first projects in which I decided to leave tutorial hell and just attack a project all on my own. I was always fond of this game and decided to replicate it just based on playing it, reviewing it, and using my own problem-solving skills.
 
-To see how you can add code snippets, see below:
+This project really allowed me to practice and hone in on developing the basic HTML, CSS, and Vanilla Javascript work-flow, tackle responsive design decisions & practices, and also implement javascript functions and working with JSON objects.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+I initially started of by completing the entire project first by implementing the design and functionality of the game (ensuring users could type or select a letter and it would appear in the ui.) From there, I applied all the rules of the game to check whether a word guessed was correct or incorrect.
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+The first iteration of the project was completed using a list of simple words that I stored on the script js for simplification purposes. However, after futhering my knowledge with API's and data storage, I decided to take the project further and use a third-party API to fetch the "secret guess word" as well as use Client Side Storage to allow users to view their stats as they play the game.
+
+An example of the game set up code in JS:
+
+```js
+function newGameSetUp() {
+  //reset game screen
+  document.querySelectorAll(".letterCell").forEach((item) => {
+    item.textContent = "";
+    item.classList.remove("active");
+    item.classList.remove("correct");
+    item.classList.remove("wrong");
+    item.classList.remove("wrongPlacement");
+  });
+  playerStats = getLocalStorage("playerStats");
+  //close out message
+  exitMessage(3);
+  //show beginning message
+  startGameMessage.classList.remove("hidden");
+  messageBox.classList.remove("hidden");
+  //start new game
+  return beginNewGame();
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+I really enjoyed creating this project and how it helped establish my comfort with JavaScript and implementing a project from scratch, beginning to end.
 
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- LinkedIn - [@fperezfrancisco](https://www.linkedin.com/in/fperezfrancisco/)
