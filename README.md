@@ -14,8 +14,6 @@ A personal project based on the famous Wordle Web App Game [Wordle Web App Game]
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -27,6 +25,10 @@ Users should be able to:
 - See which letters are correct and in the right place, which are correct but placed wrong, and which do not belong all together
 - See whether after 6 guesses they won or lost
 - Track and see their game stats
+
+![](imgs/wordle-gameplay.png)
+![](imgs/wordle-lost.png)
+![](imgs/wordle-stats.png)
 
 ### Links
 
